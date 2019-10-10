@@ -28,6 +28,7 @@ console.log(angkaPrima(6)); // false
 console.log(angkaPrima(23)); // true
 console.log(angkaPrima(33)); // false
 console.log(angkaPrima(1)); // false
+/*
 console.log(angkaPrima(11)); // 
 console.log(angkaPrima(13)); // 
 console.log(angkaPrima(17)); // 
@@ -48,3 +49,4 @@ console.log(angkaPrima(83)); //
 console.log(angkaPrima(89)); // 
 console.log(angkaPrima(97)); // 
 console.log(angkaPrima(101)); // 
+*/
