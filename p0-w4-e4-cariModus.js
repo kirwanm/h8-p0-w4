@@ -11,28 +11,33 @@ contohnya [1, 1, 1] adalah -1.
 */
 
 function cariModus(arr) {
+  var numHasil = 0;
   var result = [];
-  var sdhAda = 0;
   for(var i=0; i<arr.length; i++) {
     var counter = 1;
-    for(j=i+1; j<arr.length; j++) {
-      if(arr[i]===arr[j]) {
-        if(sdhAda!==arr[i]) {
-          result.push(arr[i]);
-          sdhAda = arr[i];
-        }
-        counter++;
-        result.push(counter);
+    for(var j=i+1; j<arr.length; j++) {
+      if(arr[j]===arr[i]) {
+        counter ++;
+      }
+    }
+    if(counter>1) {result.push(arr[i]); result.push(counter)};
+    if(counter===arr.length) {i=arr.length};
+  }
+  //console.log(result);
+  if(result.length===0) {
+    numHasil = -1;
+  }
+  else {
+    for(var i=result.length-1; i>-1; i-=2) {
+      if(result[i]!==arr.length) {
+        numHasil = result[i-1];
+      }
+      else {
+        numHasil = -1;
       }
     }
   }
-  console.log(result);
-  if(result.length===0) {
-    return -1;
-  }
-  else {
-    return result[0];
-  }
+  return numHasil;
 }
 
 console.log(cariModus([10, 4, 5, 2, 4])); // 4
